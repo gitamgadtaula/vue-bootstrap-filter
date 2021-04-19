@@ -1,19 +1,27 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <p>list items like this</p>
+    <button @click="toggleIndustry">Industry</button>
+    <industry-filter :show="showIndustry" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import IndustryFilter from "./components/IndustryFilter.vue";
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  components: { IndustryFilter },
+  data() {
+    return {
+      showIndustry: false,
+    };
+  },
+  methods: {
+    toggleIndustry() {
+      this.showIndustry = !this.showIndustry;
+    },
+  },
+};
 </script>
 
 <style>
