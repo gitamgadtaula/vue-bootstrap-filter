@@ -1,7 +1,7 @@
 <template>
   <div v-if="show">
     <div class="card">
-      <ul style="display: flex; flex-direction: column">
+      <ul>
         <li v-for="(item, index) in options" :key="index">
           <input type="checkbox" v-model="form[item.value]" />
           {{ item.title }} ({{ item.count }})
@@ -53,7 +53,7 @@ ul {
   padding: 0;
 }
 li {
-  display: inline-block;
+  display: block;
   margin: 0 10px;
 }
 a {

@@ -2,7 +2,10 @@
   <div id="app">
     <p>list items like this</p>
     <button @click="toggleIndustry">Industry</button>
-    <industry-filter :show="showIndustry" />
+    <industry-filter
+      :show="showIndustry"
+      @industry-filter="getIndustryFilter"
+    />
   </div>
 </template>
 
@@ -19,6 +22,9 @@ export default {
   methods: {
     toggleIndustry() {
       this.showIndustry = !this.showIndustry;
+    },
+    getIndustryFilter(e) {
+      console.log(e);
     },
   },
 };
