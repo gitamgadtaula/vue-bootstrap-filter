@@ -2,10 +2,10 @@
 <div class="all_cards">
   <div v-if="show">
     <div class="card">
-      <div class="search_company">
+      <!-- <div class="search_company">
         <input type="text" placeholder="Search company">
         <img  src="../assets/search.svg">
-        </div>
+        </div> -->
       <ul>  
         <li v-for="(item, index) in options" :key="index">
           <label class="container">
@@ -35,20 +35,19 @@ export default {
   data() {
     return {
       options: [
-        { title: "Sales/marketing", count: 1023, value: "sales_marketing" },
-        { title: "Account Finance", count: 1023, value: "account_finance" },
-        { title: "IT", count: 1023, value: "it" },
-        { title:"Admin HR", count: 1023, value: "admin_hr" },
-        { title:"Services", count: 1023, value: "services" },
-        { title:"Engineering", count: 1023, value: "engineering" },
-        { title:"Education/training", count: 1023, value: "education_training" }
+        { title: "Fresh graduates", count: 1023, value: "fresh_graduates" },
+        { title: "1 - 3 Years", count: 1023, value: "1-3_years" },
+        { title: "3 - 5 Years", count: 1023, value: "3-5_years" },
+        { title: "5 - 10 Years", count: 1023, value: "5-10_years" },
+        { title: "Above 10 Years", count: 1023, value: "above10years" },
+            
       ],
       form: {},
     };
   },
   methods: {
     emitValue() {
-      this.$emit("industry-filter", this.form);
+      this.$emit("experience-filter", this.form);
     },
     clear() {
       //clear the form
@@ -58,26 +57,8 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.search_company{
-  border:1px solid #dfdfdf;
-  border-radius:4px;
-  background:#fff;
-  padding:8px 14px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 16px;
-}
-.search_company input{
-  border:0;
-  background:none; 
-}
-.search_company input::placeholder{
-  color:#CBCBCB;
-}
-.search_company img{
-  width:14.6px;
-  height: 14.6px;
+ul li:first-child{
+  padding-top:0;
 }
 
 </style>
