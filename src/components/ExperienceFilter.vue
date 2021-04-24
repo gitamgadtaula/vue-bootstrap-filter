@@ -1,27 +1,24 @@
 <template>
-<div class="all_cards">
-  <div v-if="show">
-    <div class="card">
-      <!-- <div class="search_company">
-        <input type="text" placeholder="Search company">
-        <img  src="../assets/search.svg">
-        </div> -->
-      <ul>  
-        <li v-for="(item, index) in options" :key="index">
-          <label class="container">
-          <input type="checkbox" v-model="form[item.value]" />
-          <span class="checkmark"></span>
-          <span class="title">{{ item.title }}</span> <span class="count">({{ item.count }})</span>
-          </label>
-        </li>
-      </ul>
-      <div class="card_buttons">
-      <button class="clear" @click="clear">Clear all</button>
-      <button class="apply" @click="emitValue">Apply</button>
+  <div class="all_cards">
+    <div v-if="show">
+      <div class="card">
+        <ul>
+          <li v-for="(item, index) in options" :key="index">
+            <label class="container">
+              <input type="checkbox" v-model="form[item.value]" />
+              <span class="checkmark"></span>
+              <span class="title">{{ item.title }}</span>
+              <span class="count">({{ item.count }})</span>
+            </label>
+          </li>
+        </ul>
+        <div class="card_buttons">
+          <button class="clear" @click="clear">Clear all</button>
+          <button class="apply" @click="emitValue">Apply</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -40,7 +37,6 @@ export default {
         { title: "3 - 5 Years", count: 1023, value: "3-5_years" },
         { title: "5 - 10 Years", count: 1023, value: "5-10_years" },
         { title: "Above 10 Years", count: 1023, value: "above10years" },
-            
       ],
       form: {},
     };
@@ -57,8 +53,7 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-ul li:first-child{
-  padding-top:0;
+ul li:first-child {
+  padding-top: 0;
 }
-
 </style>
