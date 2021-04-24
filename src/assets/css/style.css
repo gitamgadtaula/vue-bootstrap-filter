@@ -1,0 +1,251 @@
+* {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 14px;
+}
+body {
+  background: #fbf9ff;
+}
+h3 {
+  margin: 40px 0 0;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 8px 16px;
+}
+li {
+  display: block;
+  padding: 14px 0;
+}
+
+a {
+  color: #42b983;
+}
+#app {
+  text-align: center;
+  color: #4a4a4a;
+  margin-top: 60px;
+}
+.show_filters {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.filters_title {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.filter-item {
+  width: clamp(auto, auto, 20%);
+}
+.chevron-up {
+  width: 10px;
+  height: auto;
+  margin-left: 10px;
+  margin-top: -2px;
+}
+.filters_title button {
+  display: flex;
+  align-items: center;
+  font: normal 14px "Poppins";
+  background: none;
+  border: 1px solid #4a4a4a;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 4px 8px;
+  color: #4a4a4a;
+  cursor: pointer;
+}
+.filters_title button:focus {
+  color: #6456d8;
+  border: 1px solid #6456db;
+}
+button {
+  cursor: pointer;
+}
+button:focus {
+  outline: none;
+}
+input:focus {
+  outline: none;
+}
+.show_filters div {
+  width: 15%;
+}
+.card {
+  /* width: 18%; */
+  background: #fff;
+  box-shadow: 0px 16px 36px rgba(102, 102, 102, 0.5);
+  border-radius: 4px;
+  text-align: left;
+  margin-top: 16px;
+  padding: 16px 0;
+}
+.card .container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  padding-left: 35px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.card .container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background-color: #fff;
+  border: 1px solid #dfdfdf;
+  border-radius: 4px;
+}
+.card .container input:checked ~ .checkmark {
+  background-color: #6456db;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.card .container input:checked ~ .checkmark:after {
+  display: block;
+}
+.card .container input:checked ~ .title {
+  font-weight: 600;
+}
+.card .container .checkmark:after {
+  left: 5px;
+  top: 1px;
+  width: 4px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.count {
+  color: #cbcbcb;
+}
+.card_buttons {
+  border-top: 1px solid #ececec;
+  padding: 12px 16px 0 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.clear {
+  background: none;
+  border: none;
+  color: #2d67c7;
+}
+.apply {
+  background: #6456db;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 4px 23px;
+  border: none;
+}
+ul h5 {
+  width: 100%;
+  font-size: 12px;
+  color: #858585;
+  margin-bottom: 6px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.action_buttons {
+  display: none;
+}
+@media only screen and (max-width: 1499px) {
+  * {
+    font-size: 12px;
+  }
+  ul h5 {
+    font-size: 10px;
+  }
+  .card .container {
+    padding-left: 25px;
+  }
+  .checkmark {
+    width: 13px;
+    height: 13px;
+  }
+}
+/* @media only screen and (max-width: 1298px) {
+  .filters_title {
+    flex-wrap: wrap;
+  }
+  .filters_title button {
+    margin: 10px 165px;
+  }
+  .card {
+    width: 50%;
+  }
+} */
+/* @media only screen and (max-width: 991px) {
+  .filters_title button {
+    margin: 10px 120px;
+  }
+} */
+@media only screen and (max-width: 768px) {
+  .filters_title {
+    display: block;
+  }
+
+  * {
+    margin: 0;
+  }
+  #app {
+    margin-top: 0;
+  }
+  .filters {
+    position: relative;
+    height: 100vh;
+  }
+  li:last-child {
+    padding-bottom: 0;
+  }
+  .filters_title button {
+    width: 100%;
+    margin: 0;
+    background: #fff;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    border-top: 1px solid #dfdfdf;
+  }
+  .filters_title button:last-child {
+    border-bottom: 1px solid #dfdfdf;
+  }
+  .card {
+    width: 100%;
+  }
+  .card_buttons {
+    display: none;
+  }
+  .action_buttons {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-top: 1px solid #ececec;
+    background-color: #fff;
+    padding: 12px 16px 12px 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
