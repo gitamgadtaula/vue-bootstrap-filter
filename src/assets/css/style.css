@@ -184,7 +184,7 @@ ul h5 {
     height: 13px;
   }
 }
-@media only screen and (max-width: 1298px) {
+/* @media only screen and (max-width: 1298px) {
   .filters_title {
     flex-wrap: wrap;
   }
@@ -194,12 +194,12 @@ ul h5 {
   .card {
     width: 50%;
   }
-}
-@media only screen and (max-width: 991px) {
+} */
+/* @media only screen and (max-width: 991px) {
   .filters_title button {
     margin: 10px 120px;
   }
-}
+} */
 @media only screen and (max-width: 768px) {
   .filters_title {
     display: block;
